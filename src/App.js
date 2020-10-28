@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
-import logo from "./logo.svg";
 import "./App.css";
 
 const App = () => {
@@ -9,12 +8,10 @@ const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('');
-  const [query, setQuery] = useState('lime')
+  const [query, setQuery] = useState('lime');
+
 
   useEffect(() => {
-    getRecipes();
-  }, [query]);
-
   const getRecipes = async () => {
     const response = await fetch(
       `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
@@ -23,6 +20,11 @@ const App = () => {
     setRecipes(data.hits);
     console.log(data.hits);
   };
+
+
+    getRecipes();
+  }, [query]);
+
 
   const updateSearch = e => {
     setSearch(e.target.value);
@@ -65,3 +67,5 @@ const App = () => {
 };
 
 export default App;
+
+//Gracias por interesarte en la app
