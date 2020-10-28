@@ -68,4 +68,4 @@ const App = () => {
 
 export default App;
 
-//Gracias por interesarte en la aplicacion
+//Gracias por interesarte en la app
